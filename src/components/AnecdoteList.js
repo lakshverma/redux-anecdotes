@@ -21,9 +21,9 @@ const Anecdote = ({ anecdote, handleVote }) => {
 const AnecdoteList = () => {
   const dispatch = useDispatch();
   const anecdotes = useSelector((state) => {
-    if (state.filter !== "INPUT") {
-      return state.anecdotes.filter(anecdote => anecdote.content.includes(state.filter))
-    }
+    // if (state.filter !== "INPUT") {
+    //   return state.anecdotes.filter(anecdote => anecdote.content.includes(state.filter))
+    // }
     return state.anecdotes
   });
   const sortedAnecdotes = anecdotes.sort((a, b) => b.votes - a.votes);
