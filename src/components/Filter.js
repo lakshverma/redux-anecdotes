@@ -1,16 +1,17 @@
 import React from "react";
+import { connect } from 'react-redux'
 import { handleInputChange } from "../reducers/filterReducer";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
-const Filter = () => {
-  const dispatch = useDispatch();
+const Filter = (props) => {
+//   const dispatch = useDispatch();
   const style = {
     marginBottom: 10,
   };
 
   const handleChange = (event) => {
     const input = event.target.value;
-    dispatch(handleInputChange(input));
+    props.handleInputChange(input);
   };
   return (
     <div style={style}>
@@ -19,4 +20,7 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default connect(
+    null,
+    { handleInputChange }
+)(Filter);
