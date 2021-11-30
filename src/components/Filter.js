@@ -9,9 +9,9 @@ const Filter = () => {
   };
 
   const handleChange = (event) => {
-      const input = event.target.value
-      dispatch(handleInputChange(input))
-  }
+    const input = event.target.value;
+    dispatch(handleInputChange(input));
+  };
   return (
     <div style={style}>
       filter <input onChange={handleChange} />
